@@ -1,5 +1,7 @@
 const publicRoutes = require('./publicRoutes');
+const privateRoutes = require('./privateRoutes');
 
 module.exports = {
-    publicRoutes
+    publicRoutes,
+    privateRoutes
 }
