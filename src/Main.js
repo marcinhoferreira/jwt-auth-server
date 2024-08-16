@@ -1,6 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-const { publicRoutes } = require('./routes');
+const {
+    publicRoutes,
+    privateRoutes
+} = require('./routes');
+const controller = require('./controllers');
 require('dotenv').config();
 
 const app = express();
@@ -29,6 +33,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(baseUrl, publicRoutes);
+app.use(baseUrl, controller.auth.verifyToken, privateRoutes);
 
 app.listen(PORT, () => {
     console.log(`Servidor online, na porta ${PORT}`);

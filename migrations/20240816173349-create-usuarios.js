@@ -30,11 +30,10 @@ module.exports = {
         defaultValue: 'A'
       },
       createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,        
+        allowNull: false
       },
       updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     });
